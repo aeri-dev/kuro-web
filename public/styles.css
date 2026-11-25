@@ -52,8 +52,9 @@ h1, h2, h3 { margin: 0; line-height: 1.08; letter-spacing: -0.025em; }
 .hero { position: relative; display: grid; grid-template-columns: 1.1fr .9fr; align-items: center; gap: 48px; max-width: var(--max); margin: 0 auto; padding: 64px 20px 56px; }
 .eyebrow { display: inline-flex; align-items: center; gap: 10px; margin: 0 0 22px; padding: 7px 14px; border-radius: 999px; background: var(--surface); border: 1px solid var(--line); color: var(--muted); font-weight: 600; font-size: 14px; }
 .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 0 4px rgba(229, 57, 53, .2); }
-h1 { font-size: clamp(48px, 7.4vw, 88px); font-weight: 800; letter-spacing: -0.05em; line-height: 1; }
-mark { background: var(--accent); color: #fff; padding: 0 .18em .04em; border-radius: .16em; box-decoration-break: clone; -webkit-box-decoration-break: clone; }
+h1 { font-size: clamp(48px, 7.4vw, 88px); font-weight: 800; letter-spacing: -0.05em; line-height: 1.1; }
+/* The red box sits snug around "No ads." without touching the line above. */
+mark { display: inline-block; line-height: .92; background: var(--accent); color: #fff; padding: .06em .17em .13em; border-radius: .17em; box-shadow: 0 14px 40px rgba(229, 57, 53, .35); }
 .lead { max-width: 33em; margin: 26px 0 34px; color: #C9C9C9; font-size: 18.5px; }
 .cta { display: flex; flex-wrap: wrap; gap: 12px; }
 .meta { margin: 18px 0 0; color: var(--subtle); font-size: 14px; }
@@ -68,9 +69,9 @@ mark { background: var(--accent); color: #fff; padding: 0 .18em .04em; border-ra
 .chip { position: absolute; z-index: 3; display: flex; align-items: center; gap: 8px; padding: 10px 16px; border-radius: 14px; background: rgba(20, 20, 20, .82); border: 1px solid rgba(255, 255, 255, .08); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); box-shadow: 0 18px 40px rgba(0, 0, 0, .5); font-weight: 700; font-size: 14px; white-space: nowrap; animation: float 6s ease-in-out infinite; }
 .chip b { color: var(--accent-hi); font-size: 18px; }
 .chip svg { width: 18px; height: 18px; color: var(--accent-hi); }
-.chip-a { left: 2%; top: 22%; animation-delay: -1s; }
-.chip-b { right: -2%; top: 46%; animation-delay: -3s; }
-.chip-c { left: 6%; bottom: 14%; animation-delay: -5s; }
+/* Badges straddle the phone's edges, over the screen's margins rather than its content. */
+.chip-b { right: -4%; top: 14%; animation-delay: -3s; }
+.chip-c { left: -2%; bottom: 18%; animation-delay: -5s; }
 .pulse { width: 9px; height: 9px; border-radius: 50%; background: #66BB6A; box-shadow: 0 0 0 0 rgba(102, 187, 106, .6); animation: ping 2s infinite; }
 @keyframes ping { 70% { box-shadow: 0 0 0 10px rgba(102, 187, 106, 0); } 100% { box-shadow: 0 0 0 0 rgba(102, 187, 106, 0); } }
 
@@ -95,8 +96,9 @@ section h2 { font-size: clamp(34px, 4.8vw, 54px); font-weight: 800; text-align: 
 .tag { display: inline-block; margin: 0 0 14px; padding: 5px 12px; border-radius: 999px; background: var(--accent-soft); color: var(--accent-hi); font-weight: 700; font-size: 13px; }
 .feature h3 { font-size: clamp(28px, 3.4vw, 40px); font-weight: 800; letter-spacing: -0.035em; }
 .feature-copy > p:not(.tag) { color: #C2C2C2; font-size: 18px; margin: 16px 0 0; }
-.ticks { list-style: none; padding: 0; margin: 24px 0 0; display: grid; gap: 10px; }
-.ticks li { display: flex; gap: 12px; align-items: center; color: var(--text); font-weight: 600; }
+.ticks { list-style: none; padding: 0; margin: 24px 0 0; display: grid; gap: 10px; text-align: left; }
+.ticks li { display: flex; gap: 12px; align-items: flex-start; color: var(--text); font-weight: 600; line-height: 1.45; }
+.ticks li::before { margin-top: 1px; }
 .ticks li::before { content: ""; flex: none; width: 22px; height: 22px; border-radius: 7px; background: var(--accent-soft) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='m6 12.5 4 4 8-9' fill='none' stroke='%23FF5A4F' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center / 16px no-repeat; }
 
 /* Trailer */
@@ -104,7 +106,9 @@ section h2 { font-size: clamp(34px, 4.8vw, 54px); font-weight: 800; text-align: 
 .trailer h2 { text-align: left; }
 .trailer .kicker { text-align: left; }
 .trailer .btn { margin-top: 28px; }
-.phone-video { width: 330px; }
+/* The trailer is 9:16, a little wider than a phone screen: the frame follows the video so nothing is cut off. */
+.phone-video { width: 330px; aspect-ratio: auto; }
+.phone-video > video { height: auto; aspect-ratio: 9 / 16; }
 
 /* Everything grid */
 .grid { list-style: none; margin: 48px 0 0; padding: 0; display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
@@ -152,13 +156,8 @@ details p { margin: 0 4px 22px; color: var(--muted); }
 .foot nav a:hover { color: var(--text); }
 .foot p { grid-column: 1 / -1; margin: 0; color: var(--subtle); font-size: 13px; }
 
-/* Phone download dock */
-.dock { position: fixed; z-index: 30; left: 12px; right: 12px; bottom: calc(12px + env(safe-area-inset-bottom)); display: none; align-items: center; gap: 12px; padding: 10px 10px 10px 12px; border-radius: 20px; background: rgba(22, 22, 22, .9); border: 1px solid rgba(255, 255, 255, .08); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); box-shadow: 0 20px 50px rgba(0, 0, 0, .6); translate: 0 140%; transition: translate .4s var(--ease); }
-.dock.show { translate: 0 0; }
-.dock img { border-radius: 10px; }
-.dock div { flex: 1; display: flex; flex-direction: column; line-height: 1.25; }
-.dock b { font-weight: 800; }
-.dock span { color: var(--muted); font-size: 12.5px; }
+/* Text meant for computers or for phones only */
+.on-phone { display: none; }
 
 /* Tablets */
 @media (max-width: 980px) {
@@ -170,7 +169,8 @@ details p { margin: 0 4px 22px; color: var(--muted); }
   .feature, .feature.flip { grid-template-columns: 1fr; gap: 40px; text-align: center; }
   .feature.flip .phone { order: 0; }
   .feature-copy { margin: 0 auto; }
-  .ticks { justify-content: center; }
+  /* The list stays left-aligned, centered as a block under the centered text. */
+  .ticks { width: fit-content; max-width: 100%; margin-inline: auto; }
   .trailer { grid-template-columns: 1fr; text-align: center; gap: 40px; }
   .trailer h2, .trailer .kicker, .sub.left { text-align: center; margin-inline: auto; }
   .phone-video { justify-self: center; }
@@ -188,8 +188,10 @@ details p { margin: 0 4px 22px; color: var(--muted); }
   .hero-art { min-height: 560px; }
   .phone-hero { width: 260px; }
   .halo { width: 380px; height: 380px; }
-  .chip { font-size: 12.5px; padding: 8px 12px; }
-  .chip-a { left: 0; } .chip-b { right: 0; } .chip-c { left: 2%; }
+  /* On a phone the badges would cover the app screen. */
+  .chip { display: none; }
+  .on-desk { display: none; }
+  .on-phone { display: block; }
   .phone { width: 260px; border-radius: 40px; }
   .phone > img, .phone > video { border-radius: 32px; }
   .phone-video { width: 280px; }
@@ -198,10 +200,9 @@ details p { margin: 0 4px 22px; color: var(--muted); }
   .grid { grid-template-columns: 1fr; }
   .qr { display: none; }
   .get-title { margin-top: 0; }
-  .final { margin-top: 100px; border-radius: 24px; }
-  .foot { grid-template-columns: 1fr; padding-bottom: 110px; }
+  .final { margin: 100px 16px 0; padding: 48px 20px; border-radius: 24px; }
+  .foot { grid-template-columns: 1fr; }
   .foot nav { justify-content: flex-start; }
-  .dock { display: flex; }
 }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }

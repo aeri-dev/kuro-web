@@ -36,18 +36,6 @@ if (video) {
   });
 }
 
-// Phones: a download bar slides in once the first download button has scrolled away.
-const dock = document.querySelector('[data-dock]');
-const first = document.querySelector('.hero [data-download]');
-if (dock && first) {
-  new IntersectionObserver(([e]) => {
-    const show = !e.isIntersecting && e.boundingClientRect.top < 0;
-    dock.classList.toggle('show', show);
-    dock.setAttribute('aria-hidden', String(!show));
-    dock.querySelector('a').tabIndex = show ? 0 : -1;
-  }).observe(first);
-}
-
 // iPhone and iPad visitors learn it's an Android app before downloading.
 if (/iphone|ipad|ipod/i.test(navigator.userAgent)) document.querySelector('[data-ios-note]')?.removeAttribute('hidden');
 
