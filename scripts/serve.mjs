@@ -7,7 +7,7 @@ import {GET as release} from '../api/release.mjs';
 import {GET as download} from '../api/download.mjs';
 
 const root = resolve(import.meta.dirname, '..', 'public');
-const types = {'.html': 'text/html; charset=utf-8', '.css': 'text/css', '.js': 'text/javascript', '.svg': 'image/svg+xml', '.png': 'image/png', '.jpg': 'image/jpeg', '.ttf': 'font/ttf', '.apk': 'application/vnd.android.package-archive'};
+const types = {'.html': 'text/html; charset=utf-8', '.css': 'text/css', '.js': 'text/javascript', '.svg': 'image/svg+xml', '.png': 'image/png', '.jpg': 'image/jpeg', '.ttf': 'font/ttf', '.mp4': 'video/mp4', '.apk': 'application/vnd.android.package-archive'};
 const port = Number(process.env.PORT) || 3000;
 
 createServer(async (req, res) => {

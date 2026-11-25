@@ -6,142 +6,214 @@
   <meta name="color-scheme" content="dark">
   <meta name="theme-color" content="#0A0A0A">
   <title>Kuro: read manga free, no ads · Download for Android</title>
-  <meta name="description" content="Kuro is a free manga, manhwa and manhua reader for Android with no ads. Smooth reader, offline downloads, your library and a community of readers. Download the APK.">
+  <meta name="description" content="Kuro is a free manga, manhwa and manhua reader for Android with no ads. Instant page turns, offline downloads, your whole library and a community of readers. Download the APK.">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Kuro: read manga. Free. No ads.">
-  <meta property="og:description" content="A free manga reader for Android with no ads: smooth reader, offline downloads and a community of readers.">
-  <meta property="og:image" content="/img/home.jpg">
+  <meta property="og:description" content="A free manga reader for Android with no ads: instant page turns, offline downloads and a community of readers.">
+  <meta property="og:image" content="/img/trailer-poster.jpg">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" type="image/svg+xml" href="/img/kuro.svg">
   <link rel="icon" type="image/png" href="/img/favicon.png">
   <link rel="apple-touch-icon" href="/img/kuro-180.png">
   <link rel="preload" href="/fonts/Manrope_800ExtraBold.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="preload" href="/img/app/home.jpg" as="image">
   <link rel="stylesheet" href="/styles.css">
   <script src="/main.js" defer></script>
 </head>
 <body>
+  <a class="skip" href="#main">Skip to content</a>
   <header class="bar">
     <a class="brand" href="/" aria-label="Kuro home"><img src="/img/kuro.svg" alt="" width="34" height="34"><span>Kuro</span></a>
     <nav aria-label="Sections">
       <a href="#features">Features</a>
+      <a href="#trailer">Trailer</a>
       <a href="#install">Install</a>
       <a href="#faq">FAQ</a>
     </nav>
     <a class="btn btn-sm" href="/download" data-download>Download</a>
   </header>
 
-  <main>
+  <main id="main">
+    <!-- Hero: the real app, cycling through its screens -->
     <section class="hero">
       <div class="hero-copy">
-        <p class="eyebrow"><span class="dot" aria-hidden="true"></span>Free manga reader for Android</p>
-        <h1>Read manga.<br>Free. <mark>No ads.</mark></h1>
-        <p class="lead">Manga, manhwa and manhua in one app: a reader that turns pages instantly, chapters saved for offline, your whole library and a community of readers.</p>
-        <div class="cta">
+        <p class="eyebrow reveal"><span class="dot" aria-hidden="true"></span>Free manga reader for Android</p>
+        <h1 class="reveal">Read manga.<br>Free. <mark>No ads.</mark></h1>
+        <p class="lead reveal">Manga, manhwa and manhua in one app. Pages turn instantly, chapters save for offline, your library follows every series, and a community of readers is one tap away.</p>
+        <div class="cta reveal">
           <a class="btn btn-lg" href="/download" data-download>
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0-5-5m5 5 5-5M5 21h14" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
             <span>Download for Android</span>
           </a>
-          <a class="btn btn-ghost btn-lg" href="#install">How to install</a>
+          <a class="btn btn-ghost btn-lg" href="#trailer">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13l11-6.5z" fill="currentColor"/></svg>
+            <span>Watch the trailer</span>
+          </a>
         </div>
-        <p class="meta"><span data-version>Version 1.3.7</span> · APK · 17 MB · Android 7.0 or newer · no account needed</p>
+        <p class="meta reveal"><span data-version>Version 1.3.7</span> · 17 MB · Android 7.0+ · no account needed</p>
+        <p class="ios-note" data-ios-note hidden>Kuro is for Android. On an iPhone? Send this page to an Android phone.</p>
       </div>
-      <div class="hero-art" aria-hidden="true">
-        <div class="glow"></div>
-        <img class="shot shot-back" src="/img/reader.jpg" alt="" width="540" height="960">
-        <img class="shot shot-front" src="/img/home.jpg" alt="" width="540" height="960" fetchpriority="high">
+      <div class="hero-art">
+        <div class="halo" aria-hidden="true"></div>
+        <div class="phone phone-hero" data-carousel aria-label="Kuro screens: home, reader, vertical scroll, community" role="img">
+          <img src="/img/app/home.jpg" alt="" width="390" height="844" class="on">
+          <img src="/img/app/reader.jpg" alt="" width="390" height="844" loading="lazy">
+          <img src="/img/app/vertical.jpg" alt="" width="390" height="844" loading="lazy">
+          <img src="/img/app/community.jpg" alt="" width="390" height="844" loading="lazy">
+        </div>
+        <div class="chip chip-a" aria-hidden="true"><b>0</b> ads</div>
+        <div class="chip chip-b" aria-hidden="true"><span class="pulse"></span>Instant page turns</div>
+        <div class="chip chip-c" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M12 3v12m0 0-5-5m5 5 5-5M5 21h14" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Read offline
+        </div>
       </div>
     </section>
 
     <section class="strip" aria-label="Highlights">
-      <div><strong>0</strong><span>ads, ever</span></div>
-      <div><strong>Free</strong><span>every chapter</span></div>
-      <div><strong>Offline</strong><span>downloads</span></div>
-      <div><strong>Instant</strong><span>page turns</span></div>
+      <div class="reveal"><strong>250,000+</strong><span>titles to discover</span></div>
+      <div class="reveal"><strong>0</strong><span>ads, ever</span></div>
+      <div class="reveal"><strong>Offline</strong><span>chapter downloads</span></div>
+      <div class="reveal"><strong>Free</strong><span>every chapter</span></div>
     </section>
 
+    <!-- Features, each with the real screen -->
     <section id="features" class="features">
-      <h2>Everything you read, in one place</h2>
-      <p class="sub">Made for reading, not for ads.</p>
+      <p class="kicker reveal">Features</p>
+      <h2 class="reveal">Built for reading, not for ads</h2>
 
-      <article class="feature">
-        <img src="/img/reader.jpg" alt="Kuro's manga reader showing a page" width="540" height="960" loading="lazy">
-        <div>
+      <article class="feature reveal">
+        <div class="phone"><img src="/img/app/reader.jpg" alt="Kuro's page-by-page reader showing a color manga page" width="390" height="844" loading="lazy"></div>
+        <div class="feature-copy">
+          <p class="tag">Reader</p>
           <h3>A reader that feels instant</h3>
-          <p>Pages turn with no loading in between, the next chapter is ready before you reach it, and you can pinch to zoom anywhere on a page, like in your photo gallery. Tap the sides to turn, the middle for controls.</p>
+          <p>No loading between pages: the next ones are already there, and the next chapter loads before you reach it. Pinch to zoom anywhere on a page, like in your gallery. Tap the sides to turn, the middle for controls.</p>
+          <ul class="ticks"><li>Page by page or vertical scroll</li><li>Original or data-saver quality</li><li>Jump to any page, bookmark any page</li></ul>
         </div>
       </article>
-      <article class="feature flip">
-        <img src="/img/manhwa.jpg" alt="Kuro's vertical scroll reader for manhwa" width="540" height="960" loading="lazy">
-        <div>
-          <h3>Manhwa, the way it's meant to scroll</h3>
-          <p>Webtoons open in vertical scroll. The bars hide as you read, and reaching the bottom takes you straight into the next chapter.</p>
+
+      <article class="feature flip reveal">
+        <div class="phone"><img src="/img/app/vertical.jpg" alt="Kuro's vertical scroll reader with pages stacked" width="390" height="844" loading="lazy"></div>
+        <div class="feature-copy">
+          <p class="tag">Manhwa &amp; webtoons</p>
+          <h3>Scroll the way it's meant to be read</h3>
+          <p>Webtoons open in vertical scroll. The bars slide away as you read, a tap on the right moves you down, and reaching the bottom opens the next chapter by itself.</p>
+          <ul class="ticks"><li>Auto next chapter</li><li>Bars hide while you scroll</li><li>Comments and likes at the end of each chapter</li></ul>
         </div>
       </article>
-      <article class="feature">
-        <img src="/img/library.jpg" alt="Kuro's library with downloaded chapters" width="540" height="960" loading="lazy">
-        <div>
-          <h3>Your library, online or off</h3>
-          <p>Follow your series, pick up exactly where you stopped, and see new chapters in Updates. Download chapters (one, the next ten, or all) and read on the plane.</p>
+
+      <article class="feature reveal">
+        <div class="phone"><img src="/img/app/search.jpg" alt="Kuro's search with manga, manhwa and manhua filters" width="390" height="844" loading="lazy"></div>
+        <div class="feature-copy">
+          <p class="tag">Discover</p>
+          <h3>Find your next obsession</h3>
+          <p>Trending titles, all-time favorites, top manhwa, romance and new releases on the home screen, and search across 250,000+ titles by any spelling, with genre and type filters.</p>
+          <ul class="ticks"><li>Chapters from several sources, picked for you</li><li>Ratings, reviews and "More like this"</li><li>Switch source yourself any time</li></ul>
         </div>
       </article>
-      <article class="feature flip">
-        <img src="/img/community.jpg" alt="Kuro's community feed with a poll" width="540" height="960" loading="lazy">
-        <div>
+
+      <article class="feature flip reveal">
+        <div class="phone"><img src="/img/app/library.jpg" alt="Kuro's library with reading lists" width="390" height="844" loading="lazy"></div>
+        <div class="feature-copy">
+          <p class="tag">Library</p>
+          <h3>Your shelf, online or off</h3>
+          <p>Follow every series you read, pick up on the exact page, and see new chapters in Updates. Download the next 1, 5 or 10 chapters (or all of them) and read on the plane.</p>
+          <ul class="ticks"><li>Reading, planned, completed lists</li><li>Download queue you can cancel</li><li>Export your library any time</li></ul>
+        </div>
+      </article>
+
+      <article class="feature reveal">
+        <div class="phone"><img src="/img/app/community.jpg" alt="Kuro's community feed with posts and a poll" width="390" height="844" loading="lazy"></div>
+        <div class="feature-copy">
+          <p class="tag">Community</p>
           <h3>Read together</h3>
-          <p>Post about what you're reading, run polls, comment on chapters, follow other readers and send private messages, all inside the app.</p>
+          <p>Share what you're reading, run polls, follow hashtags and other readers, and chat in private messages. Supporters get a gold crown next to their name.</p>
+          <ul class="ticks"><li>For you, Following, Latest and Top feeds</li><li>Photos, quotes, reposts and polls</li><li>Private messages with photos</li></ul>
         </div>
       </article>
     </section>
 
+    <!-- Trailer -->
+    <section id="trailer" class="trailer">
+      <div class="trailer-copy reveal">
+        <p class="kicker">Trailer</p>
+        <h2>25 seconds of Kuro</h2>
+        <p class="sub left">The whole app at a glance: discovery, the reader, manhwa, the library and the community.</p>
+        <button class="btn btn-ghost" type="button" data-sound aria-pressed="false">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9v6h4l5 4V5L8 9zM16 9l5 6M21 9l-5 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span>Turn sound on</span>
+        </button>
+      </div>
+      <div class="phone phone-video reveal">
+        <video src="/trailer.mp4" poster="/img/trailer-poster.jpg" muted loop playsinline preload="none" width="720" height="1280" aria-label="Kuro trailer"></video>
+      </div>
+    </section>
+
+    <!-- Everything -->
     <section class="all" aria-labelledby="all-title">
-      <h2 id="all-title">Everything in Kuro</h2>
-      <p class="sub">All of this is in the app today, free.</p>
+      <p class="kicker reveal">All in the app</p>
+      <h2 id="all-title" class="reveal">Everything in Kuro</h2>
       <ul class="grid">
-        <li><b>Huge catalog</b><span>Manga, manhwa and manhua from AniList, MangaBaka and MangaDex, with trending, popular, latest updates and genres.</span></li>
-        <li><b>Search that finds it</b><span>Search by any title or other spelling, filter by genre and type, sort by popular, newest or updated.</span></li>
-        <li><b>Chapters from many sources</b><span>Kuro checks several sources and picks the one with the most chapters, or switch source yourself.</span></li>
-        <li><b>Page by page or vertical</b><span>Two reading modes, image quality and zoom settings, jump to any page.</span></li>
-        <li><b>Pinch to zoom</b><span>Zoom anywhere on a page with two fingers, double-tap to reset.</span></li>
-        <li><b>Next chapter, automatically</b><span>Loaded early, so it opens the moment you finish.</span></li>
-        <li><b>Progress and bookmarks</b><span>Your page is saved as you read; bookmark any page and come back to it.</span></li>
-        <li><b>Library lists</b><span>Reading, planned, completed and more, with continue-reading on the home screen.</span></li>
-        <li><b>New chapter updates</b><span>Library → Updates shows what's new in the series you follow.</span></li>
-        <li><b>Offline downloads</b><span>Next 1, 5 or 10 chapters, unread, or all, in a queue you can cancel.</span></li>
-        <li><b>Reviews</b><span>Rate and review every title, and read what others think.</span></li>
-        <li><b>Community feed</b><span>Posts, photos, hashtags, polls, quotes and reposts, with For you, Following, Latest and Top.</span></li>
-        <li><b>Chapter comments</b><span>Like a chapter and talk about it at the end, spoilers marked.</span></li>
-        <li><b>Private messages</b><span>Chat one to one with other readers, with photos and replies.</span></li>
-        <li><b>Your profile</b><span>Username, picture, banner, bio, favorite manga and character, followers.</span></li>
-        <li><b>Supporter crown</b><span>Support Kuro on Patreon and get the gold crown next to your name.</span></li>
-        <li><b>Safe by default</b><span>18+ content stays hidden unless you confirm you're 18 or older.</span></li>
-        <li><b>Smooth everywhere</b><span>Instant page turns and iPhone-style animations on every button.</span></li>
+        <li class="reveal"><b>Huge catalog</b><span>Manga, manhwa and manhua from AniList, MangaBaka and MangaDex.</span></li>
+        <li class="reveal"><b>Search that finds it</b><span>Any title or other spelling, genres, types and sorting.</span></li>
+        <li class="reveal"><b>Many chapter sources</b><span>Kuro picks the source with the most chapters, or you choose.</span></li>
+        <li class="reveal"><b>Two reading modes</b><span>Page by page or vertical scroll, with quality and zoom settings.</span></li>
+        <li class="reveal"><b>Pinch to zoom</b><span>Anywhere on the page, double-tap to reset.</span></li>
+        <li class="reveal"><b>Next chapter, ready</b><span>Loaded early, opens the moment you finish.</span></li>
+        <li class="reveal"><b>Progress and bookmarks</b><span>Your page saves as you read.</span></li>
+        <li class="reveal"><b>New chapter updates</b><span>See what's new in everything you follow.</span></li>
+        <li class="reveal"><b>Offline downloads</b><span>Next 1, 5, 10, unread or all, in one queue.</span></li>
+        <li class="reveal"><b>Reviews</b><span>Rate and review every title.</span></li>
+        <li class="reveal"><b>Community feed</b><span>Posts, photos, hashtags, polls, quotes and reposts.</span></li>
+        <li class="reveal"><b>Chapter comments</b><span>Like a chapter and talk about it, spoilers marked.</span></li>
+        <li class="reveal"><b>Private messages</b><span>One-to-one chats with photos and replies.</span></li>
+        <li class="reveal"><b>Your profile</b><span>Username, picture, banner, bio and favorites.</span></li>
+        <li class="reveal"><b>Supporter crown</b><span>Back Kuro on Patreon, get the gold crown.</span></li>
+        <li class="reveal"><b>Safe by default</b><span>18+ stays hidden unless you confirm you're 18+.</span></li>
       </ul>
     </section>
 
+    <!-- Install -->
     <section id="install" class="install">
-      <h2>Install in a minute</h2>
-      <p class="sub">Kuro isn't on the Play Store, so Android asks you to allow the install once.</p>
-      <ol class="steps">
-        <li><span class="num">1</span><h3>Download</h3><p>Tap <b>Download for Android</b> on your phone. If Chrome asks, choose <b>Download anyway</b>.</p></li>
-        <li><span class="num">2</span><h3>Open the file</h3><p>Open <b>kuro.apk</b> from the notification or your Downloads. If asked, allow <b>Install unknown apps</b> for your browser.</p></li>
-        <li><span class="num">3</span><h3>Install and read</h3><p>Tap <b>Install</b>, then <b>Open</b>. Kuro tells you inside the app when a new version is out.</p></li>
-      </ol>
-      <div class="cta center">
-        <a class="btn btn-lg" href="/download" data-download>
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0-5-5m5 5 5-5M5 21h14" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          <span>Download Kuro</span>
-        </a>
+      <p class="kicker reveal">Install</p>
+      <h2 class="reveal">On your phone in a minute</h2>
+      <p class="sub reveal">Kuro isn't on the Play Store, so Android asks you to allow the install once.</p>
+      <div class="install-grid">
+        <ol class="steps">
+          <li class="reveal"><span class="num">1</span><div><h3>Download</h3><p>Tap <b>Download for Android</b>. If your browser asks, choose <b>Download anyway</b>.</p></div></li>
+          <li class="reveal"><span class="num">2</span><div><h3>Open the file</h3><p>Open <b>kuro.apk</b> from the notification or your Downloads, and allow <b>Install unknown apps</b> for your browser if asked.</p></div></li>
+          <li class="reveal"><span class="num">3</span><div><h3>Install and read</h3><p>Tap <b>Install</b>, then <b>Open</b>. Kuro tells you inside the app when a new version is out.</p></div></li>
+        </ol>
+        <div class="get reveal">
+          <div class="qr" data-qr><img src="/img/qr.svg" alt="QR code that opens the Kuro download" width="180" height="180"></div>
+          <p class="get-title">Scan with your Android phone</p>
+          <p class="get-sub">Or tap the button on your phone.</p>
+          <a class="btn btn-lg" href="/download" data-download>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0-5-5m5 5 5-5M5 21h14" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span>Download Kuro</span>
+          </a>
+        </div>
       </div>
-      <p class="qr-note" data-desktop-note hidden>On a computer? Open this page on your Android phone to install.</p>
     </section>
 
     <section id="faq" class="faq">
-      <h2>Questions</h2>
-      <details><summary>Is Kuro really free?</summary><p>Yes. Every chapter is free and there are no ads. Readers who want to support the servers can pledge on Patreon and get a gold crown next to their name. That's optional.</p></details>
-      <details><summary>Does it work on iPhone?</summary><p>Not yet. Kuro is for Android phones and tablets (Android 7.0 or newer).</p></details>
-      <details><summary>Why does Android warn me about the file?</summary><p>Android shows that warning for every app that doesn't come from the Play Store. Only download Kuro from this page, so you always get the real app.</p></details>
-      <details><summary>Do I need an account?</summary><p>No. Your library and reading progress are saved on your phone. Pick a username only if you want to post in the community, and add a password if you want your account on another phone.</p></details>
-      <details><summary>How do updates work?</summary><p>When a new version is out, Kuro shows "Kuro is here" when you open it. Tap it, download, and install over the old app: your library, downloads and account stay.</p></details>
+      <p class="kicker reveal">FAQ</p>
+      <h2 class="reveal">Questions</h2>
+      <details class="reveal"><summary>Is Kuro really free?</summary><p>Yes. Every chapter is free and there are no ads. Readers who want to help pay for the servers can pledge on Patreon and get a gold crown next to their name. That's optional.</p></details>
+      <details class="reveal"><summary>Does it work on iPhone?</summary><p>Not yet. Kuro is for Android phones and tablets running Android 7.0 or newer.</p></details>
+      <details class="reveal"><summary>Why does Android warn me about the file?</summary><p>Android shows that warning for every app that doesn't come from the Play Store. Only download Kuro from this page, so you always get the real app.</p></details>
+      <details class="reveal"><summary>Do I need an account?</summary><p>No. Your library and reading progress stay on your phone. Pick a username only if you want to post in the community, and add a password if you want your account on another phone.</p></details>
+      <details class="reveal"><summary>How do updates work?</summary><p>When a new version is out, Kuro tells you when you open it. Download it and install over the old app: your library, downloads and account stay.</p></details>
+    </section>
+
+    <section class="final reveal">
+      <img src="/img/kuro.svg" alt="" width="72" height="72">
+      <h2>Your next chapter is waiting.</h2>
+      <a class="btn btn-lg" href="/download" data-download>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0-5-5m5 5 5-5M5 21h14" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span>Download for Android</span>
+      </a>
+      <p class="meta"><span data-version>Version 1.3.7</span> · free · no ads</p>
     </section>
   </main>
 
@@ -152,7 +224,14 @@
       <a href="https://www.patreon.com/cw/Kuromanga" rel="noopener">Patreon</a>
       <a href="https://kuro-privacy.fa-hd.chatgpt.site/" rel="noopener">Privacy</a>
     </nav>
-    <p>Catalog data and covers from AniList, MangaBaka and MangaDex. Chapters are credited to their sources and translation groups in the app.</p>
+    <p>Catalog data and covers from AniList, MangaBaka and MangaDex. Chapters are credited to their sources and translation groups in the app. Sample pages: <i>Give My Regards to Black Jack</i> by Shuho Sato.</p>
   </footer>
+
+  <!-- Phones: a download bar that appears once the first button scrolls away -->
+  <div class="dock" data-dock aria-hidden="true">
+    <img src="/img/kuro.svg" alt="" width="36" height="36">
+    <div><b>Kuro</b><span data-version>Version 1.3.7</span></div>
+    <a class="btn" href="/download" data-download tabindex="-1">Download</a>
+  </div>
 </body>
 </html>
