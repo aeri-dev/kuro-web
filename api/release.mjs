@@ -1,7 +1,7 @@
 // The APK the website offers. The owner publishes new versions in the app (Profile → Owner →
 // Publish an update); when one is published, the website links to it. Otherwise it offers the APK
 // that ships with this site (public/kuro-<version>.apk).
-const BUNDLED = {version: '1.3.7', url: '/kuro-1.3.7.apk'};
+const BUNDLED = {version: '1.3.8', url: '/kuro-1.3.8.apk'};
 const RELEASE_API = 'https://kuro-community.kuro-manga.workers.dev/v1/app/release';
 
 const newer = (a, b) => {
